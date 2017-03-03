@@ -18,8 +18,7 @@
 			<div id="footer-container"></div>
 			<script type="text/javascript" src="https://media.clothingsites.co.uk/media/clientstyles/scripts/CSPN/CSPN.js"></script>
 		<!-- END CLOTHINGSITES PORTABLE NAVIGATION FOOTER -->
-
-    </div><!-- .site-content -->
+		</div><!-- .site-content -->
 </section><!-- #site -->
 <?php wp_footer(); ?>
 </body>
