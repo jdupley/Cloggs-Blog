@@ -41,7 +41,7 @@
 			 \___//___/|_|  |_|\__| HTML
 			CLOTHINGSITES PORTABLE NAVIGATION (HEADER)
 			-->
-				<link rel="stylesheet" type="text/css" href="http://blog.cloggs.co.uk/wp-content/themes/cloggs-simplemag-theme/css/CSPN-cloggs.css?119">
+				<link rel="stylesheet" type="text/css" href="http://blog.cloggs.co.uk/wp-content/themes/cloggs-simplemag-theme/css/CSPN-cloggs.css?134">
 				
 				<!-- 0 = woodhouse / 1 = bbclothing / 2 = cloggs -->
 				<div id="CSPN-header" data-site="2"><!-- default content, replaced on successful content load --></div>

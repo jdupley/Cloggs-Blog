@@ -132,7 +132,7 @@
 			}
 	
 		/* show a red SALE on specific items */
-		#CSPN-header[data-site="1"] #CSPN-nav-bar ul li#CSPN-nav-bar-new-3-for-2 a{
+		#CSPN-header[data-site="2"] #CSPN-nav-bar ul li#CSPN-nav-bar-new-3-for-2 a{
 		/*#CSPN-header[data-site="0"] #CSPN-nav-bar ul li#CSPN-nav-bar-sale a{*/
 			color:#BE1522 !important;
 		}
@@ -294,6 +294,11 @@
 		display: none;
 	}
 
+	.footer-social{
+		width: 100%;
+		
+	}
+	
 	#footer-container{
 		background-color: white;
 		padding: 0px;
@@ -305,8 +310,8 @@
 	}
 
 	/* BB SPECIFIC */
-	#footer-navigation[data-site="1"]{
-		font-family: "futura-pt",sans-serif !important;
+	#footer-navigation[data-site="2"]{
+		font-family: 'Poppins',Arial,sans-serif !important;
 		font-size: 12px !important;
 		letter-spacing: 0.1em !important;
 		line-height: 2 !important;
@@ -337,7 +342,7 @@
 
 	#footer-navigation{
 		color: #676767;
-		text-align: center;
+		text-align: left;
 		text-transform: initial;
 		overflow: auto;
 		margin: 0 auto;
@@ -365,8 +370,8 @@
 			text-transform: uppercase;
 			letter-spacing: 0.1em;
 		}
-		#footer-navigation[data-site="1"] .footer-column h3{
-			font-family: "futura-pt",sans-serif !important;
+		#footer-navigation[data-site="2"] .footer-column h3{
+		font-family: 'Poppins',Arial,sans-serif !important;
 		}
 
 		.footer-column{
@@ -514,17 +519,19 @@
 					padding: 0;
 				}
 
-		/* WH SPECIFIC NEWSLETTER */
-			#footer-navigation[data-site="0"] .footer-column h3#footer-newsletter-title{
-				font-weight: normal;
-				margin-bottom: 0.9em;
+			#footer-newsletter-title{
+				width: 6em;
+				float: left;
+				display: block;
+				margin: 1.3% 0;
+				padding-left: 15px;
 			}
 
-			#footer-navigation[data-site="0"] .footer-column #newsletter-validate-detail .block-content{
+			#footer-navigation[data-site="2"] .footer-column #newsletter-validate-detail .block-content{
 				display: inline-block;
 			}
 
-				#footer-navigation[data-site="0"] .footer-column #newsletter{
+				#footer-navigation[data-site="2"] .footer-column #newsletter{
 					display: inline-block;
 					padding: 12px 10px;
 					border: 1px solid black;
@@ -537,7 +544,7 @@
 					width: -o-calc(100% - 50px);
 					width: calc(100% - 50px);
 				}
-				#footer-navigation[data-site="0"] .footer-column button.button{
+				#footer-navigation[data-site="2"] .footer-column button.button{
 					position: relative;
 					top: -2px;
 					display: inline-block;
@@ -551,31 +558,40 @@
 					border-radius: 100%;
 					text-align: center;
 				}
-				#footer-navigation[data-site="0"] .footer-column #footer-subscribe-tagline{
+				#footer-navigation[data-site="2"] .footer-column #footer-subscribe-tagline{
 					font-size: 14px;
 					width: 90%;
 					margin: 10px auto 0;
 					color: black;
 				}
-
-
+		
+		#footer-social-wrapper {
+			overflow: auto;
+			float: left;
+			display: block;
+			box-sizing: border-box;
+		}
+		
+		#footer-social-wrapper ul{
+			margin: 0;
+		}
+		
 		#footer-social-wrapper .social-links{
-			text-align: center;
+			float: left;
+			text-align: left;
 			width: 100%;
 			display: block;
-			margin-top: 15px;
 		}
 
 			#footer-social-wrapper .social-links li{
-				width: 7%;
-				margin: 2.5%;
-				padding-top: 7%;
-				background-size: contain;
+				width: 5%;
+				margin: 0.5%;
+				padding-top: 5%;
+				background-size: auto 25px;
 				background-position: center;
 				background-repeat: no-repeat;
 				cursor: pointer;
 				display: inline-block;
-				max-width: 22px;
 				position: relative;
 			}
 			#footer-social-wrapper .social-links li:hover{
@@ -617,6 +633,7 @@
 			width: 100%;
 			float: left;
 			margin-bottom: 50px;
+		    text-align: center;
 		}
 			#footer-bottom-links ul{
 				margin: 0px;
@@ -659,26 +676,13 @@
 				display: none;
 			}
 		#footer-bottom-links li{
+			margin: 0 auto;
 			width: 100%;
 			border: 0;
 		}
 		.footer-column{
 			width: 100%;
 			padding: 0px;
-		}
-		#footer-navigation .footer-column:not(#footer-column-4) h3{
-			text-align: left;
-			width: 100%;
-			padding: 10px;
-			background-color: #EDEDED;
-			background-image: url('http://www.woodhouseclothing.com/media/clientstyles/css-resource/fold-triangle.png');
-			background-position: 1em center;
-			background-size: 1.3em;
-			background-repeat: no-repeat;
-			padding-left: 2.3em;
-			border-top: 1px solid white;
-			cursor: pointer;
-			margin: 0px;
 		}
 		
 		.footer-column .folding-footer-item{
