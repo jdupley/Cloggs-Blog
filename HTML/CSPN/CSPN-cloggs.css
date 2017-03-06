@@ -4,7 +4,6 @@
 		font-style:normal;
 		font-weight:400
 	}
-	
 	/*----------------------------------------
 	HEADER / CSPN NAV
 	----------------------------------------*/
@@ -16,47 +15,54 @@
 	#CSPN-header{
 		width: 100%;
 		overflow: hidden;
-		font-family: tw-cent-mt,Arial,sans-serif !important;
-		letter-spacing: 0.05em !important;
+		font-family: 'Poppins',Arial,sans-serif !important;
 		font-weight: normal;
 		background-color: #457c70;
 		box-sizing: border-box;
 		padding: 0px;
 		margin: 0px;
 	}
-	#CSPN-header[data-site="1"]{
-		font-family: "futura-pt",sans-serif !important;
+	#CSPN-header[data-site="2"]{
+		font-family: 'Poppins',Arial,sans-serif !important;
 	}
 		#CSPN-promo-bar{
-			background-color: white;
-			box-sizing: border-box;
-		}
-			#CSPN-promo-bar ul{
-				text-align: center;
-				list-style: none;
-				overflow: auto;
-				margin: 0px;
-				padding: 0px;
+				width: 100%;
+				background-color: #579d8e;
+				color: #fff;
+				box-sizing: border-box;
 			}
-			#CSPN-promo-bar ul:not(:empty){
-				padding: 10px;
+			#CSPN-promo-bar-container{
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+				background-color: #579d8e;
+				box-sizing: border-box;
 			}
-				#CSPN-promo-bar ul li{
-					float: left;
-					display: block;
-					width: 33.3333333%;
-					padding: 0px; margin: 0px;
-					font-size: 14px;
-					vertical-align: middle;
-					box-sizing: border-box;
-					padding: 0 10px;
+				#CSPN-promo-bar-container ul{
+					text-align: center;
+					list-style: none;
+					overflow: auto;
+					margin: 0px;
+					padding: 0px;
 				}
-					#CSPN-promo-bar ul li a{
-						color: #666;
-						text-decoration: none;
+				#CSPN-promo-bar-container ul{
+				}
+					#CSPN-promo-bar-container ul li{
+						float: left;
+						display: block;
+						width: 33.3333333%;
+						margin: 0px;
+						font-size: 14px;
+						vertical-align: middle;
+						box-sizing: border-box;
+						padding: 15px 0;
 					}
-					#CSPN-header[data-site="1"] #CSPN-promo-bar ul li a{
-						text-transform: uppercase;
+						#CSPN-promo-bar-container ul li a{
+							color: #FFF;
+							text-decoration: none;
+						}
+					#CSPN-promo-bar-container ul li:nth-of-type(2){
+						background-color: #457c70; 
 					}
 		#CSPN-black-bar{
 			background-color: black;
@@ -64,45 +70,50 @@
 			color: white;
 		}
 		#CSPN-title-bar{
-			height: 150px;
+			height: 80px;
 			background-color: #457c70;
-			width: 200px;
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: 200px auto;
+			background-size: auto 60px;
 			cursor: pointer;
 			margin: 10px auto;
 		}
 		#CSPN-nav-bar{
 			width: 100%;
-			max-width: 1200px;
 			padding: 0;
-			box-sizing: border-box;
-			margin: 0 auto;
-			line-height: 1;
-			background-color: #aaa;
+			background-color: #f2f2f2;
 		}
-			#CSPN-nav-bar ul{
-				text-align: center;
-				list-style: none;
-				overflow: visible;
-				margin: 0px;
-				padding: 0px;
+			#CSPN-nav-bar-container{
+				width: 100%;
+				max-width: 1200px;
+				padding: 0;
+				box-sizing: border-box;
+				margin: 0 auto;
+				line-height: 1;
 			}
-				#CSPN-nav-bar ul li{
-					display: inline-block;
-					width: initial;
-					text-transform: uppercase;
-					padding: 5px 10px;
+				#CSPN-nav-bar-container ul{
+					text-align: center;
+					list-style: none;
+					overflow: visible;
 					margin: 0px;
-					font-size: 14px;
-					vertical-align: middle;
-					box-sizing: border-box;
+					padding: 0px;
 				}
-					#CSPN-nav-bar ul li a{
-						text-decoration: none;
-						color: black;
+					#CSPN-nav-bar-container ul li{
+						display: inline-block;
+						width: initial;
+						padding: 20px 12px;
+						margin: 0px;
+						font-size: 14px;
+						vertical-align: middle;
+						box-sizing: border-box;
+						text-transform: capitalize;
+						letter-spacing: 0em;
+						    font-weight: 500;
 					}
+						#CSPN-nav-bar-container ul li a{
+							text-decoration: none;
+							color: #1a1a1a;
+						}
 		#CSPN-grey-bar{
 			background-color: #E1E2E2;
 			height: 40px;
@@ -112,11 +123,12 @@
 	@media only screen and (min-width: 1101px){
 	
 		#CSPN-nav-bar ul{
-			display: flex;
-			flex-direction: row;
+			/* display: flex;
+			flex-direction: row; */
+			margin: 0 auto;
 		}
 			#CSPN-nav-bar ul li{
-				flex: auto;
+				/* flex: auto; */
 			}
 	
 		/* show a red SALE on specific items */
@@ -129,10 +141,10 @@
 		#CSPN-close{
 			display: none;
 		}
-		#CSPN-nav-bar ul li:hover a{
+		/* #CSPN-nav-bar ul li:hover a{
 			border-bottom: 5px solid black;
 			color: black;
-		}
+		} */
 	}
 	
 	/* MOBILE ONLY */	
