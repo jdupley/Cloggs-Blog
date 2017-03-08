@@ -191,6 +191,11 @@ body {
 			padding-bottom: 25px;
 		}
 		
+		#footer-column-0 .footer-social-links ul {
+			display: block;
+			margin: 0 auto;
+		}
+		
 		#footer-column-1,
 		#footer-column-2,
 		#footer-column-3,
