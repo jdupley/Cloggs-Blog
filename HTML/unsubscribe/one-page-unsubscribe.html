@@ -1,0 +1,128 @@
+<DOCTYPE! html>
+<html>
+<head>
+<style>
+	*{
+		box-sizing: border-box;
+	}
+
+	#container {
+		width: 70%;
+		display: block;
+	}
+	
+	#sorry{
+		width: 100%;
+	}
+	#itsme{
+		width: 100%;
+	}
+	#missyoualready{
+		width: 100%;
+	}
+	
+	.float-text{
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translateY(-50%)translateX(-50%);
+		-webkit-transform: translateY(-50%)translateX(-50%);
+		transform: translateY(-50%)translateX(-50%);
+	}
+	
+	a.button {
+		-webkit-appearance: button;
+		-moz-appearance: button;
+		appearance: button;
+
+		text-decoration: none;
+		color: initial;
+	}
+	
+	h1, h2, p  {
+		padding-bottom: 20px;
+		text-align: center;
+	}
+	
+	cloggs-unsubscribe-hide {
+		display: none;
+	}
+	
+</style>
+
+<script>
+
+</script>
+
+</head>
+<body>
+
+<div id="container" class="float-text">
+	<div id="sorry" class="float-text">
+		<h1>We're sorry</h1>
+		<h2>that you're thinking of leaving us...</h2>
+		<p>By unsubscribing you will miss out on:</p>
+		<p>Being the first to hear about online sales, exclusive offers and discounts our top brands
+	receiving news about the latest styles, season must haves and competitions</p>
+
+		<form style="margin: 0 auto; width: 600px;">
+			<input type="button" onclick="showhide('');" value="Unsubscribe" style="display: inline-block;"/>
+			
+			<input type="button" onclick="location.href='http://google.com';" value="Continue Shopping" style="display: inline-block; float: right;"/>
+		</form>
+	</div>
+	
+	<div id="itsme" class="float-text cloggs-unsubscribe-hide">
+		<h1 class="float-text">It's me not you...</h1>
+		<p class="float-text">We are always looking to make improvments, please take a moment
+	to tell us why you no longer wish to hear from us:</p>
+		<form style="display: block"> 
+			<input type="radio" id="option-1" name="toomany">
+			<label for="option-1">I receive too many emails</label>
+			<input type="radio" id="option-2" name="toomany">
+			<label for="option-2">I don’t think the content is relevant</label>
+			<input type="radio" id="option-3" name="toomany">
+			<label for="option-3">I signed up during a promotion and I am no longer interested</label>
+			<input type="radio" id="option-4" name="toomany">
+			<label for="option-4">Other (please explain below)</label>
+			<input type="textarea" id="comments" name="comments">
+			
+			<input type="submit" value="Send"/>
+		</form>
+
+		<div class="upper-box box">
+			<a href="javascript:;" class="cheekytoggle box-link">
+				<aside style="float: left; width: 55%; text-align:right;">
+				<h1>Unsubscribe</h1>
+				</aside>
+				<content style="float: right; width: 40%; text-align:left;">
+				<div class="addimg"></div>
+				</content>
+			</a>
+		</div>
+	</div>
+	
+	
+	<div id="missyoualready" class="float-text cloggs-unsubscribe-hide" style="overflow: auto;">
+		<h1>Miss you already</h1>
+		<p>You’ve been successfully unsubscribed from CLOGGS email newletter.</p>
+		<p>Changed your mind?</p>
+		<p>Re-subscribe and we will send you a 10% off welcome back code</p>
+		
+		<form>
+			<input type="text" id="email" name="email" style="width: 80%; float: left;">
+			
+			<input type="submit" value="SIGN UP" style="width: 20%; float: left;"/>
+		</form>
+		
+		<a href="#" class="button">CONTINUE SHOPPING</a>
+	</div>
+</div>
+
+
+
+</body>
+</html>
