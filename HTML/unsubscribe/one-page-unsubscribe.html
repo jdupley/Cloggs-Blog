@@ -137,7 +137,7 @@
 		margin: 0;
 	}
 		#one-page-unsubscribe-container #one-page-unsubscribe-unsubscribe p  {
-			margin: 20px 0 30px 0;
+			margin: 20px 0 10px 0;
 			text-align: center;
 		}
 		
@@ -179,17 +179,18 @@
 			display: inline-block;
 			float: left;
 			font-size: 13px;
+			line-height: 30px;
 		}
 		
 		#one-page-unsubscribe-container #why-unsubscribe-form input[type=radio]{
 			width: 20px;
-			width: 7%;
-			margin: 3px 2% 0 0;
+			width: 10%;
+			margin: 15px 0 0 0;
 		}
 		#one-page-unsubscribe-container #why-unsubscribe-form label{
 			font-weight: bold;
 			width: 280px;
-			width: 91%
+			width: 90%
 		}
 		
 		#one-page-unsubscribe-container #why-unsubscribe-form #form-new-line-textarea {
@@ -229,6 +230,32 @@
 					margin: 10px 0 50px 0;
 				}
 			}
+			
+		#one-page-unsubscribe-container #why-unsubscribe-form input[type=radio]{
+			display: none;
+		}
+		
+		#one-page-unsubscribe-container #why-unsubscribe-form label{
+			cursor: pointer;
+		}
+		
+		#one-page-unsubscribe-container #why-unsubscribe-form input[type=radio] + label:before{
+			content: "";
+			display: inline-block;
+			width: 3em;
+			height: 2em;
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAA1CAYAAAAgYencAAAACXBIWXMAAAsSAAALEgHS3X78AAAC3ElEQVRYw+2YsW7bMBCGPzkeullApk7N2EzhZKDIEHYPUL2B6a1b3Seg9QR11yyip67ylG6WgCzJJE9Z7a2j8gTsUNlVbDkxJTdFUR+gQRLI/+eRvPvvPGstf9PaAGEYCsAAZzXneQBiYKC1zl0GHnmeJ4AEeNNgIa8AAbyTUhpXDwyATmklmSO4X/LcRRiGQmuduRA4Kb1Ll8FLC8PQAL0SoZ2tVX6pA16Yqbt3Lf6yHQgcCBwIHAgcCLTWkoqoOU/dcbSBsoBIwjAc1UjHn5oQGAEfivcOoBt4dKa1Tpy2oBjQL8RIE0sB6TrIK4vS4gz4NcAzVy1YSeBwDf9LAu0tQWW0ZxyzTbi2twSWiz0TSFw88EfN87xBscjYWpu1XxD4pKgfl1XUwPM88SIErq6uToqSr1P63AF8rLXrj7R7tCiKLFD1DKy1rICHw6E/HA7l7e3tYF/gvV6vCjgH5BK3VeQABcyB6f39/ZemLs/znCAIGI/HG9kSENbapNwfCIBvRY2P7/sIIRqBSylJ03T91wQIrLU/1iOhKjM8Pj4eNwWfzWaPvp+fn8+stYG1Nq8KxeX0Ky8vL2uV2lmWIYTYAI+iiJubm3jX/kC+vo9SSuI4fhZcSslisdgAV0o55wIAlFJMJpNfUidNt062BH94+C2oOp0OcRwj5fMCaeds2O/3NwhsA0+SZCfwJwkYYzg7e9y1G4/HBEFAnuerA1cF7nKLthLwfZ8kSej1eo/v0mSClHIv4M9mQ9/3McasVr+6q2snvS74zmfAGEMURZX/moA7HUKlVCWJ0WjUKHI6pWOlFEKIVVwQQhAEwd414dNVqBCNVvxPqOIMeO8yyd3dnVim8dPT08/dbne95TvfiUAYhkprbZ5SsVV2fX29CpHz+TzrdruJiwfmJRkeFeLEtT9QDpm56xYMgaAkGJvUBBPXjvvRdDrN0zT9DrwG3tYEXgBftdYfXQf+BMgI1kNTY2sKAAAAAElFTkSuQmCC');
+			background-position: top left;
+			background-size: 66.666666% 200%;
+			background-repeat: no-repeat;
+			cursor: pointer;
+			margin-left: 0.75em;
+			vertical-align: middle;
+		}
+		
+		#one-page-unsubscribe-container #why-unsubscribe-form input[type=radio]:checked + label:before{
+			background-position: bottom left;
+		}
 		
 		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you p {
 			text-align: center;
@@ -321,7 +348,7 @@
 		<p>We are always looking to make improvements, please take a moment
 	to tell us why you no longer wish to hear from us:</p>
 		<div id="errors">
-		
+		&nbsp;
 		</div>
 		<form id="why-unsubscribe-form">
 			<span class="form-new-line">
@@ -433,6 +460,7 @@
 				errorElement.innerHTML = error;
 			};
 			
+			var placeholder = "&nbsp;";
 			var select = "&bull; You must select a reason to unsubscribe";
 			var success = "&bull; The form is valid and will send";
 			var failure = "&bull; The Other field or Comments box has not been filled in";
