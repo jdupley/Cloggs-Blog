@@ -156,11 +156,11 @@
 		border: 1px solid red;
 		padding: 10px;
 		margin: 0 0 10px 0;
-		display: none;
-		-webkit-transition: display 500ms ease-out 1s;
-		-moz-transition: display 500ms ease-out 1s;
-		-o-transition: display 500ms ease-out 1s;
-		transition: display 500ms ease-out 1s;
+		opacity: 0;
+		-webkit-transition: opacity ease-out 0.3s;
+		-moz-transition: opacity ease-out 0.3s;
+		-o-transition: opacity ease-out 0.3s;
+		transition: opacity ease-out 0.3s;
 	}
 	
 	#one-page-unsubscribe-container #why-unsubscribe-form {
@@ -384,8 +384,8 @@
 	function ShowElement(elementID){
 	
 	var element = document.getElementById(elementID);
-		if (window.getComputedStyle(element, null).display === 'none') {
-			element.style.display = 'block';
+		if (window.getComputedStyle(element, null).opacity === '0') {
+			element.style.opacity = '1';
 		}
 	};
 	
