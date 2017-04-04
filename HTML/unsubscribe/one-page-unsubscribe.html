@@ -22,8 +22,8 @@
 	
 	#one-page-unsubscribe-container {
 		margin: 0 auto;
-		width: 60%;
-		max-width: 1248px;
+		width: 46%;
+		max-width: 780px;
 		display: block;
 	}
 	
@@ -137,7 +137,7 @@
 		margin: 0;
 	}
 		#one-page-unsubscribe-container #one-page-unsubscribe-unsubscribe p  {
-			margin: 20px 0 0 0;
+			margin: 20px 0 30px 0;
 			text-align: center;
 		}
 		
@@ -151,12 +151,22 @@
 		display: none;
 	}
 	
+	#one-page-unsubscribe-container #one-page-unsubscribe-unsubscribe #errors {
+		color: red;
+		border: 1px solid red;
+		padding: 10px;
+		margin: 0 0 10px 0;
+		display: none;
+		-webkit-transition: display 500ms ease-out 1s;
+		-moz-transition: display 500ms ease-out 1s;
+		-o-transition: display 500ms ease-out 1s;
+		transition: display 500ms ease-out 1s;
+	}
 	
 	#one-page-unsubscribe-container #why-unsubscribe-form {
 		width: 100%;
 		display: block;
 		overflow: auto;
-		margin: 30px 0 0 0;
 	}
 	
 		#one-page-unsubscribe-container #why-unsubscribe-form .form-new-line {
@@ -201,23 +211,91 @@
 				}
 			}
 				
-		#one-page-unsubscribe-container #why-unsubscribe-form input[type=submit]{
+		#one-page-unsubscribe-container #why-unsubscribe-form input[type=button]{
+			display: block;
+			
 			border: none;
 			
 			background-color: #000;
 			color: #FFF;
 			
 			width: 180px;
-			margin: 10px 0 50px 10px;
+			margin: 10px auto 50px auto;
 			padding: 10px;
 		}
 			@media only screen and (max-width: 599px) {
-				#one-page-unsubscribe-container #why-unsubscribe-form input[type=submit]{
+				#one-page-unsubscribe-container #why-unsubscribe-form input[type=button]{
 					width: 100%;
 					margin: 10px 0 50px 0;
 				}
 			}
-	
+		
+		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you p {
+			text-align: center;
+			margin: 20px 0 0 0;
+		}
+		
+		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer {
+			margin: 20px auto 0 auto;
+			max-width: 600px;
+		}
+		
+		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer input#email {
+			padding: 7.5px;
+			width: 70%;
+		}
+		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer input#resubmit {
+			width: 30%;
+		}
+			
+			@media only screen and (max-width: 599px) {
+				#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer input#email {
+					width: 100%;
+					margin: 0 0 20px 0;
+				}
+			}
+		
+		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you input[type=submit]{
+			text-align: center;
+			font-size: 13px;
+		
+			border: none;
+			
+			background-color: #000;
+			color: #FFF;
+			
+			width: 30%;
+			margin: 0 0 50px 0;
+			padding: 10px;
+		}
+			@media only screen and (max-width: 599px) {
+				#one-page-unsubscribe-container #one-page-unsubscribe-miss-you input[type=submit]{
+					width: 100%;
+					margin: 0 0 50px 0;
+				}
+			}
+		
+		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you a.button{
+			display: block;
+		
+			text-align: center;
+			font-size: 13px;
+		
+			border: none;
+			
+			background-color: #000;
+			color: #FFF;
+			
+			width: 30%;
+			margin: 0 auto 50px auto;
+			padding: 10px;
+		}
+			@media only screen and (max-width: 599px) {
+				#one-page-unsubscribe-container #one-page-unsubscribe-miss-you a.button{
+					width: 100%;
+					margin: 0 0 50px 0;
+				}
+			}
 	
 </style>
 </head>
@@ -234,7 +312,7 @@
 		<form id="continue-to-unsubscribe-form">
 			<button id="apology-button"/>UNSUBSCRIBE</button>
 			
-			<button onclick="location.href='http://google.com';" style="float: right;"/>CONTINUE SHOPPING</button>
+			<button onclick="location.href='https://www.cloggs.co.uk/';" style="float: right;"/>CONTINUE SHOPPING</button>
 		</form>
 	</div>
 	
@@ -242,6 +320,9 @@
 		<h1>It's not you it's you...</h1>
 		<p>We are always looking to make improvements, please take a moment
 	to tell us why you no longer wish to hear from us:</p>
+		<div id="errors">
+		
+		</div>
 		<form id="why-unsubscribe-form">
 			<span class="form-new-line">
 				<input type="radio" id="option-1" name="option" value="toomany">
@@ -263,21 +344,21 @@
 				<input type="textarea" id="comments" name="comments">
 			</span>
 			<span class="form-new-line">
-				<input type="submit" value="UNSUBSCRIBE" id="unsubscribe-button"/>
+				<input type="button" onclick="" value="UNSUBSCRIBE" id="unsubscribe-button"/>
 			</span>
 		</form>
 	</div>
 		
 	<div id="one-page-unsubscribe-miss-you" class="cloggs-result-hide" style="overflow: auto;">
 		<h1>Miss you already</h1>
-		<p>You’ve been successfully unsubscribed from CLOGGS email newletter.</p>
-		<p>Changed your mind?</p>
-		<p>Re-subscribe and we will send you a 10% off welcome back code</p>
+		<p style="margin: 10px 0 0 0;">You've been successfully unsubscribed from CLOGGS email newletter.</p>
+		<p style="font-weight: bold;">Changed your mind?</p>
+		<p style="margin: 0;">Re-subscribe and we will send you a <span style="font-weight: bold; text-decoration: underline;">10% off</span> welcome back code</p>
 		
-		<form>
-			<input type="text" id="email" name="email" style="width: 80%; float: left;">
-			
-			<input type="submit" value="SIGN UP" style="width: 20%; float: left;"/>
+		<form id="resubscribe-offer">
+			<span class="form-new-line-resubscribe">
+				<input type="text" id="email" name="email" placeholder="joeblog@example.co.uk"><input type="submit" value="SIGN UP" name="resubmit"/>
+			</span>
 		</form>
 		
 		<a href="#" class="button">CONTINUE SHOPPING</a>
@@ -286,8 +367,29 @@
 
 
 <script>
-
-// making sure the page has loaded
+// FUNCTION WRAPS TO PREVENT DUPLICATES
+(function(){
+	// FUNCTION LIBRARY
+	// HIDE AND SHOW FUNCTION
+	function ToggleElement(elementID){
+	
+	var element = document.getElementById(elementID);
+		if (window.getComputedStyle(element, null).display === 'block') {
+			element.style.display = 'none';
+		}else{
+			element.style.display = 'block';
+		}
+	};
+	
+	function ShowElement(elementID){
+	
+	var element = document.getElementById(elementID);
+		if (window.getComputedStyle(element, null).display === 'none') {
+			element.style.display = 'block';
+		}
+	};
+	
+	// making sure the page has loaded
 	var Page_Ready = function(callback){
 		var activated = false;
 		if (document.readyState == "loaded" || document.readyState == "interactive" || document.readyState == "complete"){
@@ -302,49 +404,68 @@
 			});
 		}
 	}
-
+	
+	// VARIABLE HEAVEN
+	var unsubscribeButton = document.getElementById("unsubscribe-button");
+	var apologyButton = document.getElementById("apology-button");
+	var errorElement = document.getElementById("errors");
+	var comments = document.getElementById("comments");
+	
+	// START OF MAIN CODE
+	// hiding page 1  && showing page 2
+	apologyButton.addEventListener("click", function(e){
+		e.preventDefault();
+		
+		ToggleElement('one-page-unsubscribe-apology');
+		ToggleElement('one-page-unsubscribe-unsubscribe');
+	
+	});
+	
+	// validating the form to ensure data has been entered
 	Page_Ready(function() {
 	
-		var unsubscribeButton = document.getElementById("unsubscribe-button");
 		unsubscribeButton.addEventListener("click", function(e){
 			
 			e.preventDefault();
 			
-			var unsubscribe = document.forms["why-unsubscribe-form"]["option"].value;
-			if (unsubscribe == "") {
-				alert("Name must be filled out");
-				return false;
-			}
+			function ErrorReport(error){
+				
+				errorElement.innerHTML = error;
+			};
 			
-			var comments = document.getElementById("comments");
-			if (unsubscribe == "other" && comments.value != "") {
-				console.log("hello world");
+			var select = "&bull; You must select a reason to unsubscribe";
+			var success = "&bull; The form is valid and will send";
+			var failure = "&bull; The Other field or Comments box has not been filled in";
+			var comment = "&bull; You must select 'Other' if you'd like to give a reason to unsubscribe";
+			var broken = "&bull; There was an unusual error that we haven't prepared for.";
+			
+			var unsubscribe = document.forms["why-unsubscribe-form"]["option"].value;
+			if (unsubscribe == "" && comments.value == "") {
+				ErrorReport(select);
+				ShowElement('errors');
+			} else if (( unsubscribe != "other" && comments.value == "" ) || ( unsubscribe == "other" && comments.value != "" )){
+				ErrorReport(success);
+				// hiding page 2  && showing page 3
+				ToggleElement('one-page-unsubscribe-unsubscribe');
+				ToggleElement('one-page-unsubscribe-miss-you');
+				//SEND THE FORM
+			} else if ( unsubscribe == "other" && comments.value == "" ){
+				ErrorReport(failure);
+				ShowElement('errors');
+				//SHOWS AN ERROR IF COMMENTS ARE EMPTY
+			} else if ( unsubscribe != "other" && comments.value != "" ){
+				ErrorReport(comment);
+				ShowElement('errors');
+				//SHOWS AN ERROR IF COMMENTS FILLED BUT WON'T SEND
 			} else {
-				console.log("tarrah world");
+				ErrorReport(broken);
+				ShowElement('errors');
+				//SHOWS ERROR FOR UNEXPECTED SITUATIONS
 			}
 		})
 	});
-
-
-// hiding page 1  || showing page 2
-	var apologyButton = document.getElementById("apology-button");
-	apologyButton.addEventListener("click", function(e){
-		e.preventDefault();
-		
-		var apology = document.getElementById('one-page-unsubscribe-apology');
-		if (window.getComputedStyle(apology, null).display === 'block') {
-			apology.style.display = 'none';
-		}else{
-			apology.style.display = 'block';
-		}
-		
-		var unsubscribe = document.getElementById('one-page-unsubscribe-unsubscribe');
-		if (window.getComputedStyle(unsubscribe, null).display === 'block') {
-			unsubscribe.style.display = 'none';
-		}else{
-			unsubscribe.style.display = 'block';
-		}
-	});
+})();
+	
 </script>
 </body>
 </html>
