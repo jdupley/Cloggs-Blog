@@ -177,7 +177,7 @@
 		color: red;
 		border: 1px solid red;
 		padding: 10px;
-		margin: 0 0 10px 0;
+		margin: 20px auto 10px;
 		opacity: 0;
 		-webkit-transition: opacity ease-out 0.3s;
 		-moz-transition: opacity ease-out 0.3s;
@@ -292,10 +292,9 @@
 		
 		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer {
 			margin: 35px auto 0 auto;
-			max-width: 600px;
 		}
 		
-		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer input#email {
+		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer input#resubmit-email {
 			padding: 7.5px;
 			width: 70%;
 		}
@@ -304,7 +303,7 @@
 		}
 			
 			@media only screen and (max-width: 599px) {
-				#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer input#email {
+				#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer input#resubmit-email {
 					width: 100%;
 					margin: 0 0 20px 0;
 				}
@@ -417,7 +416,7 @@
 		</div>
 		<form id="resubscribe-offer">
 			<span class="form-new-line-resubscribe">
-				<input type="text" id="email" name="email" placeholder="joeblog@example.co.uk"><input type="submit" value="SIGN UP" name="resubmit" id="resubmit-button" onsubmit="ValidateEmail();"/>
+				<input type="text" id="resubmit-email" name="email" placeholder="joeblog@example.co.uk"><input type="submit" value="SIGN UP" name="resubmit" id="resubmit-button" onsubmit="ValidateEmail();"/>
 			</span>
 		</form>
 		
@@ -469,6 +468,7 @@
 	var unsubscribeButton = document.getElementById("unsubscribe-button");
 	var apologyButton = document.getElementById("apology-button");
 	var resubmitButton = document.getElementById("resubmit-button");
+	var resubmitEmail = document.getElementById("resubmit-email");
 	var errorElement = document.getElementById("errors");
 	var emailErrorElement = document.getElementById("emailerrors");
 	var comments = document.getElementById("comments");
@@ -552,13 +552,13 @@
 
 			var empty = "&bull; You need to enter an email address to subscribe";
 			var success = "&bull; The form is valid and will send";
-			var broke = "&bull; There was an unusual error that we haven't prepared for";
+			var broke = "&bull; That was not a valid email address";
 			
-			var resubmit = document.forms["resubscribe-offer"]["email"].value;
-			  if (email == "") {
+			var email = resubmitEmail.value;
+			if (email == "") {
 				EmailErrorReport(empty);
 				ShowElement('emailerrors');
-			} else if (email == pattern) {
+			} else if (email.match(pattern)) {
 				EmailErrorReport(success);
 				ShowElement('emailerrors');
 			} else {
