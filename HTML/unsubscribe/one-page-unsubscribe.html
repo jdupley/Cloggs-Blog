@@ -21,6 +21,7 @@
 	}
 	
 	#one-page-unsubscribe-container {
+		letter-spacing: 0.05em;
 		margin: 0 auto;
 		width: 46%;
 		max-width: 780px;
@@ -76,11 +77,13 @@
 
 		text-decoration: none;
 		color: initial;
+		cursor: pointer;
 	}
 	
 	#one-page-unsubscribe-container button {
 		border: 0px;
 		border: none;
+		cursor: pointer;
 		
 		background-color: #000;
 		color: #FFF;
@@ -141,6 +144,12 @@
 			text-align: center;
 		}
 		
+	#one-page-unsubscribe-apology ul li {
+		text-align: left;
+		font-size: 13px;
+		line-height: 24px;
+		margin: 0;
+	}
 	
 	.cloggs-apology-hide {
 		display: block;
@@ -152,6 +161,19 @@
 	}
 	
 	#one-page-unsubscribe-container #one-page-unsubscribe-unsubscribe #errors {
+		font-size: 13px;
+		color: red;
+		border: 1px solid red;
+		padding: 10px;
+		margin: 0 0 10px 0;
+		opacity: 0;
+		-webkit-transition: opacity ease-out 0.3s;
+		-moz-transition: opacity ease-out 0.3s;
+		-o-transition: opacity ease-out 0.3s;
+		transition: opacity ease-out 0.3s;
+	}
+	#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #emailerrors {
+		font-size: 13px;
 		color: red;
 		border: 1px solid red;
 		padding: 10px;
@@ -198,19 +220,25 @@
 			display: block;
 		}
 		
-		#one-page-unsubscribe-container #why-unsubscribe-form input[type=textarea]{
-			width: 280px;
-			max-width: 100%;
-			height: 120px;
+		#one-page-unsubscribe-container #why-unsubscribe-form textarea{
+			width: 100%;
+			max-width: 730px;
+			padding-top: 120px;
 			border: 1px solid #aaaaaa;
-			margin: 10px 0 50px 10px;
+			box-sizing: border-box;
+			margin: 20px 0 50px 0;
+			
+			padding: 5px;
+			
+			-webkit-transition: 0.3s background-color ease-in-out, 0.3s border ease-in-out;
+			-ms-transition: 0.3s background-color ease-in-out, 0.3s border ease-in-out;
+			-os-transition: 0.3s background-color ease-in-out, 0.3s border ease-in-out;
+			transition: 0.3s background-color ease-in-out, 0.3s border ease-in-out;
 		}
-			@media only screen and (max-width: 599px) {
-				#one-page-unsubscribe-container #why-unsubscribe-form input[type=textarea]{
-					width: 100%;
-					margin: 10px 0 50px 0;
-				}
-			}
+		#one-page-unsubscribe-container #why-unsubscribe-form textarea:focus {
+			border: 1px solid #457c70;
+			background-color: #eeeeee;
+		}
 				
 		#one-page-unsubscribe-container #why-unsubscribe-form input[type=button]{
 			display: block;
@@ -263,7 +291,7 @@
 		}
 		
 		#one-page-unsubscribe-container #one-page-unsubscribe-miss-you #resubscribe-offer {
-			margin: 20px auto 0 auto;
+			margin: 35px auto 0 auto;
 			max-width: 600px;
 		}
 		
@@ -333,8 +361,12 @@
 		<h1>We're sorry</h1>
 		<h2>that you're thinking of leaving us...</h2>
 		<p class="bold-p">By unsubscribing you will miss out on:</p>
-		<p>Being the first to hear about online sales, exclusive offers and discounts our top brands
-	receiving news about the latest styles, season must haves and competitions</p>
+		<ul>
+			<li>Being the first to hear about online sales</p></li>
+			<li>Exclusive offers and discounts on our top brands</li>
+			<li>Receiving news about the latest styles</li>
+			<li>New season must haves and competitions</li>
+		</ul>
 
 		<form id="continue-to-unsubscribe-form">
 			<button id="apology-button"/>UNSUBSCRIBE</button>
@@ -343,7 +375,7 @@
 	</div>
 	
 	<div id="one-page-unsubscribe-unsubscribe" class="cloggs-unsubscribe-hide">
-		<h1>It's not you it's you...</h1>
+		<h1>Where did it go wrong?</h1>
 		<p>We are always looking to make improvements, please take a moment
 	to tell us why you no longer wish to hear from us:</p>
 		<div id="errors">
@@ -367,7 +399,7 @@
 				<label for="option-4">Other (please explain below)</label>
 			</span>
 			<span class="form-new-line" id="form-new-line-textarea">
-				<input type="textarea" id="comments" name="comments">
+				<textarea id="comments" name="comments" rows="3"></textarea>
 			</span>
 			<span class="form-new-line">
 				<input type="button" onclick="" value="UNSUBSCRIBE" id="unsubscribe-button"/>
@@ -380,10 +412,12 @@
 		<p style="margin: 10px 0 0 0;">You've been successfully unsubscribed from CLOGGS email newletter.</p>
 		<p style="font-weight: bold;">Changed your mind?</p>
 		<p style="margin: 0;">Re-subscribe and we will send you a <span style="font-weight: bold; text-decoration: underline;">10% off</span> welcome back code</p>
-		
+		<div id="emailerrors">
+		&nbsp;
+		</div>
 		<form id="resubscribe-offer">
 			<span class="form-new-line-resubscribe">
-				<input type="text" id="email" name="email" placeholder="joeblog@example.co.uk"><input type="submit" value="SIGN UP" name="resubmit"/>
+				<input type="text" id="email" name="email" placeholder="joeblog@example.co.uk"><input type="submit" value="SIGN UP" name="resubmit" id="resubmit-button" onsubmit="ValidateEmail();"/>
 			</span>
 		</form>
 		
@@ -434,7 +468,9 @@
 	// VARIABLE HEAVEN
 	var unsubscribeButton = document.getElementById("unsubscribe-button");
 	var apologyButton = document.getElementById("apology-button");
+	var resubmitButton = document.getElementById("resubmit-button");
 	var errorElement = document.getElementById("errors");
+	var emailErrorElement = document.getElementById("emailerrors");
 	var comments = document.getElementById("comments");
 	var continueShoppingButtons = document.getElementsByClassName("continue-shopping");
 	
@@ -454,7 +490,7 @@
 			window.location.href="https://www.cloggs.co.uk/";
 		});
 	}
-	
+
 	// validating the form to ensure data has been entered
 	Page_Ready(function() {
 	
@@ -465,6 +501,7 @@
 			function ErrorReport(error){
 				
 				errorElement.innerHTML = error;
+				
 			};
 			
 			var placeholder = "&nbsp;";
@@ -472,7 +509,7 @@
 			var success = "&bull; The form is valid and will send";
 			var failure = "&bull; The Other field or Comments box has not been filled in";
 			var comment = "&bull; You must select 'Other' if you'd like to give a reason to unsubscribe";
-			var broken = "&bull; There was an unusual error that we haven't prepared for.";
+			var broken = "&bull; There was an unusual error that we haven't prepared for";
 			
 			var unsubscribe = document.forms["why-unsubscribe-form"]["option"].value;
 			if (unsubscribe == "" && comments.value == "") {
@@ -499,6 +536,39 @@
 			}
 		})
 	});
+	
+	Page_Ready(function() {
+		resubmitButton.addEventListener("click", function(e){
+				
+			e.preventDefault();
+			
+			function EmailErrorReport(error){
+			
+				emailErrorElement.innerHTML = error;
+				
+			};
+			
+			var pattern = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+
+			var empty = "&bull; You need to enter an email address to subscribe";
+			var success = "&bull; The form is valid and will send";
+			var broke = "&bull; There was an unusual error that we haven't prepared for";
+			
+			var resubmit = document.forms["resubscribe-offer"]["email"].value;
+			  if (email == "") {
+				EmailErrorReport(empty);
+				ShowElement('emailerrors');
+			} else if (email == pattern) {
+				EmailErrorReport(success);
+				ShowElement('emailerrors');
+			} else {
+				EmailErrorReport(broke);
+				ShowElement('emailerrors');
+			}
+		
+		})
+	});
+	
 })();
 	
 </script>
